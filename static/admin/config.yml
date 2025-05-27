@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: yourgithubusername/catrepairwoman   # <-- CHANGE THIS to your repo!
+  repo: joeconlin/catrepairwoman_com   # <-- CHANGE THIS to your repo!
   branch: main
   # open_authoring: true   # Optional, lets outside contributors use PRs
 
