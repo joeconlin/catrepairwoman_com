@@ -1,6 +1,7 @@
 ######################## default configuration ####################
 # The base URL of your site (required). This will be prepended to all relative URLs.
-baseURL = "https://catrepairwoman.com"
+#baseURL = "https://catrepairwoman.com"
+baseURL  = "https://joeconlin.github.io/catrepairwoman_com/"
 # Title of your website (required).
 title = "Cat Repairwoman"
 # Your theme name
