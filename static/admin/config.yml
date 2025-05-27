@@ -1,0 +1,89 @@
+backend:
+  name: github
+  repo: yourgithubusername/catrepairwoman   # <-- CHANGE THIS to your repo!
+  branch: main
+  # open_authoring: true   # Optional, lets outside contributors use PRs
+
+media_folder: "static/uploads"    # Where images/docs uploaded via CMS are stored
+public_folder: "/uploads"         # How those files are referenced in your site
+
+publish_mode: editorial_workflow  # Enables draft/review flow (optional, can remove for instant publishing)
+
+collections:
+  # Homepage
+  - name: "home"
+    label: "Home Page"
+    files:
+      - label: "Home"
+        name: "home"
+        file: "content/_index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+          - { label: "Summary", name: "summary", widget: "string", required: false }
+
+  # About Page
+  - name: "about"
+    label: "About Page"
+    files:
+      - label: "About"
+        name: "about"
+        file: "content/about/index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+  # Contact Page (customize if you have a contact form)
+  - name: "contact"
+    label: "Contact Page"
+    files:
+      - label: "Contact"
+        name: "contact"
+        file: "content/contact/index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+  # Blog Posts
+  - name: "blog"
+    label: "Blog"
+    label_singular: "Blog Post"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Image", name: "image", widget: "image", required: false }
+
+  # Resources (for downloadable checklists, guides, etc)
+  - name: "resources"
+    label: "Resources"
+    label_singular: "Resource"
+    folder: "content/resources"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "File Download", name: "file", widget: "file", required: false }
+
+  # (Optional) Video Posts
+  - name: "videos"
+    label: "Videos"
+    label_singular: "Video"
+    folder: "content/videos"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "YouTube URL", name: "youtube", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+
